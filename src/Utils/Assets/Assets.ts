@@ -11,7 +11,7 @@ export default {
   butt: require('../../Assets/Image/Butt.png'),
   leg: require('../../Assets/Image/Leg.png'),
   homeBack: require('../../Assets/Image/HomeBackImg.png'),
-  trainingOne: require('../../Assets/Image/TrainingOne.png'),
+  trainingOne: require('../../Assets/Image/TrainingOne.jpg'),
   trainingTwo: require('../../Assets/Image/TrainingTwo.png'),
   trainingThree: require('../../Assets/Image/TrainingThree.png'),
   challengesOne: require('../../Assets/Image/ChallengesOne.png'),

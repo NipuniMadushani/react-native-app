@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import { View,  Image,  FlatList, ScrollView, } from "react-native";
+import React, { Component, useEffect, useState } from "react";
+import { View,  Image,  FlatList, ScrollView, Alert, } from "react-native";
 import { styles } from "./styles";
 import { theme, Text } from "../../../Theme/Theme";
 import STRINGS, {  ChallengesData, TrainingData, StretchingData, } from "../../../Utils/Constants/String";
@@ -14,11 +14,12 @@ import AFSeeAllTitle from "../../../Components/AFSellAllTitle";
 import AFChallengesWorkout from "../../../Components/AFChallengesWorkout";
 import AFTabBarVIew from "../../../Components/AFTabBarView";
 import AFStretchView from "../../../Components/AFStretchView";
-import { ALL_CHALLENGES, ALL_STRETCH, CHALLENGE_WORKOUT, FAVORITE, NOTIFICATION_MESSAGE, TODAY_TRAINING } from "../../../Navigator/HomeNavigator/HomeNavigator";
+import { ALL_CHALLENGES, ALL_STRETCH, CHALLENGE_WORKOUT, FAVORITE, NOTIFICATION_MESSAGE, TODAY_TRAINING, VEHICLE_ALLOCATION } from "../../../Navigator/HomeNavigator/HomeNavigator";
 import AFTrainingView from "../../../Components/AFTrainingView";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const HomeTab = ({ navigation }: any) => {
-
+  const [userDetails, setUserDetails] = useState('');
   const _challengesPress = () => {
     navigation.navigate(ALL_CHALLENGES);
   };
@@ -30,6 +31,10 @@ const HomeTab = ({ navigation }: any) => {
   const _trainingOnPress = () => {
     navigation.navigate(TODAY_TRAINING);
   };
+
+  const _vehicleAllocationPress=()=>{
+    navigation.navigate(VEHICLE_ALLOCATION);
+  }
 
   const _notificationMsgPress = () => {
     navigation.navigate(NOTIFICATION_MESSAGE);
@@ -47,11 +52,36 @@ const HomeTab = ({ navigation }: any) => {
     navigation.navigate(CHALLENGE_WORKOUT);
   };
 
+  useEffect(() => {
+  
+    const readToken = async () => {
+      try {
+        const user = await  AsyncStorage.getItem('userResponse');
+        if (user !== null) {
+          setUserDetails(user);
+          // Value is successfully retrieved
+          console.warn( user);
+          return user;
+        }
+        console.log('Token not found');
+      } catch (error) {
+        // Error retrieving the token
+        console.error('Error reading token:', error);
+      }
+    };
+
+    readToken();
+  }, [])
+
   const _trainingRender = ({ item, index }: any) => {
+    console.warn(index);
+    
     const lastItem = index === TrainingData.length - 1;
+    const onPressMethod = index !== 0 ? _trainingOnPress : _vehicleAllocationPress;
+  
     return (
       <AFTrainingView
-        onPress={_trainingOnPress}
+        onPress={onPressMethod}
         imageSource={item.image}
         workOutName={item.workOutName}
         workout={item.workout}
@@ -60,6 +90,30 @@ const HomeTab = ({ navigation }: any) => {
       />
     );
   };
+  
+
+  // const _trainingRender = ({ item, index }: any) => {
+  //   const lastItem = index === TrainingData.length - 1;
+  //   return (
+  //     {index==1?
+  //     <AFTrainingView
+  //       onPress={_trainingOnPress}
+  //       imageSource={item.image}
+  //       workOutName={item.workOutName}
+  //       workout={item.workout}
+  //       min={item.min}
+  //       isLastItem={lastItem}
+  //     />: <AFTrainingView
+  //     onPress={_othermethod
+  //     }
+  //     imageSource={item.image}
+  //     workOutName={item.workOutName}
+  //     workout={item.workout}
+  //     min={item.min}
+  //     isLastItem={lastItem}
+  //   />}
+  //   );
+  // };
 
   const _challengesWorkOutRender = ({ item, index }: any) => {
     if (index < 3) {
@@ -102,7 +156,8 @@ const HomeTab = ({ navigation }: any) => {
                 textAlign="left"
                 fontSize={fontPixel(17.8)}
               >
-                {STRINGS.homeScreen.userName}
+                {userDetails}
+                {/* {STRINGS.homeScreen.userName} */}
               </Text>
             </View>
 

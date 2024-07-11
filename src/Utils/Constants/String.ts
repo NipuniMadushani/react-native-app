@@ -5,6 +5,7 @@ import { theme } from "../../Theme/Theme";
 const STRINGS = {
   // auth
   common: {
+    username:"Username",
     email: "Email",
     password: "Password",
     comPass: "Confirm Password",
@@ -99,6 +100,7 @@ const STRINGS = {
     aboutExe: "About Exercise",
     writeNote: "Write Note",
     saveNote: "Save Note",
+    
   },
   notificationMessage: {
     notification: "Notification",
@@ -167,6 +169,7 @@ const STRINGS = {
   // Analysis
   analysis: {
     calender: "Calendar",
+    calenderDates:"Allocated Dates",
     historyWorkout : 'History of Workout',
     weight: 'Weight',
     calorieBurn : 'Calorie Burn',
@@ -189,9 +192,9 @@ export const TrainingData = [
   {
     id: 1,
     image: Assets.trainingOne,
-    workOutName: "Warm Up",
-    workout: "Workout",
-    min: "10 Min",
+    workOutName: "Vehicle Allocation",
+    // workout: "Workout",
+    // min: "10 Min",
   },
   {
     id: 2,

@@ -21,6 +21,8 @@ import CouchProfileScreen from "../../Containers/TabAppScreen/CouchProfile";
 import ChatWithCouch from "../../Containers/TabAppScreen/ChatWithCouch";
 import AllPlanWorkout from "../../Containers/TabAppScreen/AllPlanWorkOut";
 import ChatListScreen from "../../Containers/TabAppScreen/ChatList";
+import VehilceAllocation from "../../Containers/TabAppScreen/VehicleAllocation";
+import LogSheet from "../../Containers/TabAppScreen/LogSheet";
 
 
 export const HOME_MAIN_TAB = 'MainTabBar';
@@ -41,6 +43,8 @@ export const PRIVACY_POLICY = 'PrivacyPolicy';
 export const COUCH_PROFILE = 'CouchProfileScreen';
 export const CHAT_WITH_COUCH = 'ChatWithCouch';
 export const ALL_PLAN_WORKOUT = 'AllPlanWorkout';
+export const VEHICLE_ALLOCATION = 'VehicleAllocation';
+export const LOG_SHEET = 'LogSheet';
 
 
 const Stack = createStackNavigator();
@@ -73,6 +77,8 @@ const HomeNavigator = () => {
         <Stack.Screen name={COUCH_PROFILE}  component={CouchProfileScreen}  />
         <Stack.Screen name={CHAT_WITH_COUCH}  component={ChatWithCouch}  />
         <Stack.Screen name={ALL_PLAN_WORKOUT}  component={AllPlanWorkout}  />
+        <Stack.Screen name={VEHICLE_ALLOCATION}  component={VehilceAllocation}  />
+        <Stack.Screen name={LOG_SHEET}  component={LogSheet}  />
       </Stack.Navigator>
     </>
 
