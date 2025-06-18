@@ -16,7 +16,8 @@ const AFAuthBackView = (props : any) => {
           <AFBackButton onPress={props.onPress} transparent/>
         </View>
         <View style={styles.authLogoView}>
-          <SVG.AUTH_LOGO />
+      <Image source={Assets.authLogo} style={styles.logoImg} resizeMode="contain" />
+          {/* <SVG.AUTH_LOGO /> */}
         </View>
       </View>
 
@@ -46,8 +47,14 @@ export const styles = StyleSheet.create({
   authLogoView: {
     position: 'absolute',
     alignSelf: 'center',
-    top: isIOS() ? 50 : 90,
+    top: isIOS() ? 50 : 50,
   },
+  logoImg: {
+  width: 250, // or any size that fits nicely
+  height: 250
+  
+},
+
   boxContainer: {
     backgroundColor: theme.colors.white,
     paddingTop: getHeightBasedDimension() / 20,

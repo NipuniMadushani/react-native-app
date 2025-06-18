@@ -1,8 +1,11 @@
-import {View, Text} from 'react-native';
+import {View, Text, Image} from 'react-native';
 import React, { useEffect } from 'react';
 import {styles} from './styles';
 import SVG from '../../../Utils/Assets/Svg';
 import { ONBOARDING } from '../../../Navigator/AuthenticationNavigator/AuthenticationNavigator';
+
+import Assets from '../../../Utils/Assets/Assets';
+import OnBoardingScreen from '../OnBoarding';
 
 const SplashScreen = ({navigation}) => {
 
@@ -14,7 +17,8 @@ const SplashScreen = ({navigation}) => {
   return (
     <>
       <View style={styles.container}>
-        <SVG.APP_LOGO />
+         <Image source={Assets.SplashScreen}  resizeMode="contain" style={styles.image} />
+        {/* <SVG.APP_LOGO /> */}
       </View>
     </>
   );

@@ -1,26 +1,34 @@
-import {isIOS} from '../Helper/VersionCheck';
+
 // import FontSize from '@/Utils/FontSize/FontSize';
-import {createBox, createText, useTheme as useReTheme} from '@shopify/restyle';
-import { fontPixel } from '../Utils/Responsive/Responsive';
+import {
+  createBox,
+  createText,
+  useTheme as useReTheme,
+} from "@shopify/restyle";
+import { fontPixel } from "../Utils/Responsive/Responsive";
 
 // const Inter_Bold = 'Inter-Bold';
 // const Inter_ExtraBold = 'Inter-ExtraBold';
-export const Inter_Medium = 'Inter-Medium';
-export const Inter_Regular = 'Inter-Regular';
-export const Inter_SemiBold = 'Inter-SemiBold';
-
+export const Inter_Medium = "Inter-Medium";
+export const Inter_Regular = "Inter-Regular";
+export const Inter_SemiBold = "Inter-SemiBold";
 
 export const theme = {
   colors: {
-    lime_green: '#76C757',
-    Pale_Lime_Green: '#E1FFD6',
-    Rich_Black: '#212121',
-    Cool_Gray: '#8D8D8D',
-    white: '#FFFFFF',
-    black: '#000000',
-    Golden_yellow: '#FFC700',
+    lime_green: "#76C757",
+    Pale_Lime_Green: "#E1FFD6",
+    Rich_Black: "#212121",
+    Cool_Gray: "#8D8D8D",
+    white: "#FFFFFF",
+    black: "#000000",
+    Golden_yellow: "#FFC700",
+    Border_Color_Red: "#B00020",
+    Title_Color_Red: "#FF4D4D",
+    Button_Color_Red: "#D32F2F",
+    Golden_Orange_Mixed_Yellow: "#FF9800",
+    
   },
-  
+
   spacing: {
     xxs: 3,
     xs: 6,
@@ -45,33 +53,33 @@ export const theme = {
   textVariants: {
     // Font Style Regular
     inter_Medium_12: {
-      color: 'black',
+      color: "black",
       fontSize: fontPixel(12.2),
       fontFamily: Inter_Medium,
     },
     Inter_SemiBold_12: {
-      color: 'black',
+      color: "black",
       fontSize: fontPixel(12),
       fontFamily: Inter_SemiBold,
-      fontWeight : '600',
+      fontWeight: "600",
     },
     Inter_Regular_12: {
-      color: 'black',
+      color: "black",
       fontSize: fontPixel(12),
       fontFamily: Inter_Regular,
     },
     inter_Medium_15: {
-      color: 'black',
+      color: "black",
       fontSize: fontPixel(15),
       fontFamily: Inter_Medium,
     },
     inter_SemiBold_17: {
-      color: 'black',
+      color: "black",
       fontSize: fontPixel(17),
       fontFamily: Inter_SemiBold,
     },
     inter_Medium_17: {
-      color: 'black',
+      color: "black",
       fontSize: fontPixel(17),
       fontFamily: Inter_Medium,
     },

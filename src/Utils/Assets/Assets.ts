@@ -1,3 +1,5 @@
+import SplashScreen from "../../Containers/Authentication/Splash";
+
 export default {
   onBoardOne: require('../../Assets/Image/onBoardOne.png'),
   onBoardTwo: require('../../Assets/Image/onBoardTwo.png'),
@@ -39,7 +41,7 @@ export default {
   StretchTen: require('../../Assets/Image/StretchTen.png'),
   StretchEleven: require('../../Assets/Image/StretchEleven.png'),
   StretchTwelve: require('../../Assets/Image/StretchTwelve.png'),
-
+  authLogo: require('../../Assets/Image/AuthLogo.png'),
   WarmUpVideo: require('../../Assets/Image/WarmUpVideo.png'),
 
   ChallengesWorkOut: require('../../Assets/Image/ChallangesWorkout.png'),
@@ -66,6 +68,7 @@ export default {
   ChatList2: require('../../Assets/Image/ChatList2.png'),
   ChatList3: require('../../Assets/Image/ChatList3.png'),
   ChatList4: require('../../Assets/Image/ChatList4.png'),
+  SplashScreen: require('../../Assets/Image/SPLASH_SCREEN.png'),
 
 
 };
